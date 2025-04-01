@@ -37,7 +37,8 @@ export class MCPSpaceAPI {
       console.warn("Warning: API_TOKEN environment variable is not set");
     }
 
-    this.baseUrl = process.env.API_BASE_URL || "http://localhost:3000/api";
+    this.baseUrl =
+      process.env.API_BASE_URL || "https://mcp-space.vercel.app/api";
     this.headers = {
       "Content-Type": "application/json",
       Authorization: `Bearer ${this.apiToken}`,
