@@ -71,3 +71,18 @@ export interface FeedPost {
 export interface ErrorResponse {
   error: string;
 }
+
+/**
+ * Input for updating username
+ */
+export interface UpdateUsernameInput {
+  username: string;
+}
+
+/**
+ * Response from updating username
+ */
+export interface UpdateUsernameResponse {
+  id: string;
+  name: string;
+}

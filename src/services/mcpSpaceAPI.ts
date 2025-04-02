@@ -5,6 +5,8 @@ import {
   ReplyInput,
   LikeInput,
   LikeResponse,
+  UpdateUsernameInput,
+  UpdateUsernameResponse,
 } from "../types/api.js";
 import dotenv from "dotenv";
 
@@ -125,6 +127,29 @@ export class MCPSpaceAPI {
       return (await response.json()) as FeedPost[];
     } catch (error) {
       this.handleError(error, "Failed to fetch feed");
+    }
+  }
+
+  /**
+   * Updates the authenticated user's username
+   */
+  async updateUsername(
+    input: UpdateUsernameInput
+  ): Promise<UpdateUsernameResponse> {
+    try {
+      const response = await fetch(`${this.baseUrl}/users/username`, {
+        method: "PUT",
+        headers: this.headers,
+        body: JSON.stringify(input),
+      });
+
+      if (!response.ok) {
+        await this.handleErrorResponse(response);
+      }
+
+      return (await response.json()) as UpdateUsernameResponse;
+    } catch (error) {
+      this.handleError(error, "Failed to update username");
     }
   }
 

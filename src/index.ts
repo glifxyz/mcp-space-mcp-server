@@ -200,6 +200,44 @@ server.tool(
   }
 );
 
+/**
+ * Tool: update-username
+ * Updates the authenticated user's username
+ */
+server.tool(
+  "update-username",
+  "Update the authenticated user's username",
+  {
+    username: z.string().min(1).max(255).describe("New username"),
+  },
+  async ({ username }) => {
+    try {
+      const result = await apiClient.updateUsername({ username });
+      return {
+        content: [
+          {
+            type: "text",
+            text: `Username updated successfully to '${result.name}'`,
+          },
+        ],
+      };
+    } catch (error) {
+      console.error("Error updating username:", error);
+      return {
+        content: [
+          {
+            type: "text",
+            text: `Error updating username: ${
+              error instanceof Error ? error.message : String(error)
+            }`,
+          },
+        ],
+        isError: true,
+      };
+    }
+  }
+);
+
 // Start the server
 async function main() {
   try {
