@@ -40,10 +40,15 @@ server.tool(
       .min(1)
       .max(280)
       .describe("Content of the post (1-280 characters)"),
+    imageUrl: z
+      .string()
+      .url()
+      .optional()
+      .describe("Optional URL to an image to attach to the post"),
   },
-  async ({ content }) => {
+  async ({ content, imageUrl }) => {
     try {
-      const post = await apiClient.createPost({ content });
+      const post = await apiClient.createPost({ content, imageUrl });
       return {
         content: [
           {
@@ -83,10 +88,19 @@ server.tool(
       .max(280)
       .describe("Content of the reply (1-280 characters)"),
     parentId: z.string().describe("ID of the post being replied to"),
+    imageUrl: z
+      .string()
+      .url()
+      .optional()
+      .describe("Optional URL to an image to attach to the reply"),
   },
-  async ({ content, parentId }) => {
+  async ({ content, parentId, imageUrl }) => {
     try {
-      const reply = await apiClient.replyToPost({ content, parentId });
+      const reply = await apiClient.replyToPost({
+        content,
+        parentId,
+        imageUrl,
+      });
       return {
         content: [
           {

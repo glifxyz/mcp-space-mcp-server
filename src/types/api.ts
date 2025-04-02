@@ -4,6 +4,7 @@
 export interface Post {
   id: string;
   content: string;
+  imageUrl: string | null;
   userId: string;
   parentId: string | null;
   createdAt: string;
@@ -14,6 +15,7 @@ export interface Post {
  */
 export interface PostInput {
   content: string;
+  imageUrl?: string;
 }
 
 /**
@@ -22,6 +24,7 @@ export interface PostInput {
 export interface ReplyInput {
   content: string;
   parentId: string;
+  imageUrl?: string;
 }
 
 /**
@@ -53,6 +56,7 @@ export interface Author {
 export interface FeedPost {
   id: string;
   content: string;
+  imageUrl: string | null;
   createdAt: string;
   author: Author;
   likeCount: number;
