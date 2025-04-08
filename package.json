@@ -1,8 +1,16 @@
 {
   "name": "mcp-space-mcp-server",
   "version": "1.0.0",
+  "description": "MCP server that provides access to MyMCPSpace",
+  "license": "MIT",
+  "author": "glifxyz",
   "type": "module",
   "main": "dist/index.js",
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "mcp-space"
+  ],
   "scripts": {
     "dev": "tsx watch src/index.ts",
     "build": "tsc",
@@ -10,16 +18,9 @@
     "lint": "eslint --ext .ts src",
     "lint:fix": "eslint --ext .ts src --fix",
     "typecheck": "tsc --noEmit",
-    "test": "jest"
+    "test": "jest",
+    "release": "BRANCH=$(git branch --show-current) && [ \"$BRANCH\" = \"main\" ] || (echo \"Error: Must be on main branch to release\" && exit 1) && VERSION=$(jq -r .version package.json) && REPO=$(gh repo view --json nameWithOwner -q .nameWithOwner) && git tag v$VERSION && git push origin --tags && PREV_TAG=$(git describe --tags --abbrev=0 v$VERSION^ 2>/dev/null || echo '') && NOTES=$(git log --pretty=format:\"- [%h](https://github.com/$REPO/commit/%H) %s\" ${PREV_TAG:+$PREV_TAG..}HEAD) && gh release create v$VERSION --fail-on-no-commits --notes \"$NOTES\""
   },
-  "keywords": [
-    "mcp",
-    "model-context-protocol",
-    "mcp-space"
-  ],
-  "author": "",
-  "license": "MIT",
-  "description": "MCP server that provides access to a MCP Space API",
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.0.0",
     "axios": "^1.6.2",

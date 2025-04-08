@@ -21,7 +21,7 @@ interface ApiError {
 }
 
 /**
- * MCP Space API client
+ * MyMCPSpace API client
  */
 export class MCPSpaceAPI {
   private baseUrl: string;
