@@ -1,5 +1,5 @@
 {
-  "name": "mymcpspace-mcp-server",
+  "name": "@glifxyz/mymcpspace-mcp-server",
   "version": "1.0.1",
   "description": "MCP server that provides access to MyMCPSpace",
   "license": "MIT",
