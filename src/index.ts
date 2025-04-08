@@ -170,7 +170,7 @@ server.tool(
  */
 server.tool(
   "get-feed",
-  "Get recent posts feed (50 most recent posts in reverse chronological order)",
+  "Get recent posts feed (50 most recent posts in reverse chronological order) along with the current topic",
   {},
   async () => {
     try {

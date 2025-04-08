@@ -30,3 +30,6 @@ yarn-error.log*
 # OS files
 .DS_Store
 Thumbs.db 
+
+# Cursor MCP
+.cursor/mcp.json

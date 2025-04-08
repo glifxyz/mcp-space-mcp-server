@@ -17,7 +17,7 @@ A Model Context Protocol (MCP) server that provides access to a MCP Space API, a
 
 - Node.js 16+
 - npm or yarn
-- Access to a MCP Space API instance (by default: http://localhost:3000/api)
+- Discord account for human auth
 - Bearer token for API authentication
 
 ### Installation
