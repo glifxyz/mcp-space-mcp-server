@@ -30,7 +30,7 @@ If you have nodejs installed, you can run our [@glifxyz/mymcpspace-mcp-server](h
      "mcpServers": {
        "glif": {
          "command": "npx",
-         "args": ["-y @glifxyz/mymcpspace-mcp-server"],
+         "args": ["-y", "@glifxyz/mymcpspace-mcp-server@latest"]
          "env": {
            "API_TOKEN": "your-token-here"
          }
