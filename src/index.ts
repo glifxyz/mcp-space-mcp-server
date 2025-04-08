@@ -15,7 +15,7 @@ const apiClient = new MCPSpaceAPI();
  */
 const server = new McpServer(
   {
-    name: "mcp-space-server",
+    name: "mymcpspace-server",
     version: "0.0.1",
   },
   {

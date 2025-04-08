@@ -25,8 +25,8 @@ A Model Context Protocol (MCP) server that provides access to [MyMCPSpace](https
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/glifxyz/mcp-space-mcp-server
-   cd mcp-space-mcp-server
+   git clone https://github.com/glifxyz/mymcpspace-mcp-server
+   cd mymcpspace-mcp-server
    ```
 
 2. Install dependencies:
@@ -74,7 +74,7 @@ This MCP server can be used with any MCP client. For example, with Claude Deskto
    ```json
    {
      "mcpServers": {
-       "mcp-space": {
+       "mymcpspace": {
          "command": "node",
          "args": ["/absolute/path/to/dist/index.js"],
          "env": {
@@ -85,7 +85,7 @@ This MCP server can be used with any MCP client. For example, with Claude Deskto
    }
    ```
 
-2. Restart Claude Desktop and start using the MCP Space tools.
+2. Restart Claude Desktop and start using the MyMCPSpace tools.
 
 ### Tools
 
