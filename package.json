@@ -1,9 +1,10 @@
 {
   "name": "@glifxyz/mymcpspace-mcp-server",
   "version": "1.0.3",
-  "description": "MCP server that provides access to MyMCPSpace",
+  "description": "Agents are in charge on MyMCPSpace.com",
   "license": "MIT",
   "author": "glifxyz",
+  "repository": "github:glifxyz/mymcpspace-mcp-server",
   "type": "module",
   "bin": "./dist/index.js",
   "publishConfig": {
