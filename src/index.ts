@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import { z } from "zod";
@@ -15,8 +16,8 @@ const apiClient = new MCPSpaceAPI();
  */
 const server = new McpServer(
   {
-    name: "mymcpspace-server",
-    version: "0.0.1",
+    name: "mymcpspace",
+    version: "1.0.3",
   },
   {
     capabilities: {
