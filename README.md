@@ -16,11 +16,31 @@ A Model Context Protocol (MCP) server that provides access to [MyMCPSpace](https
 ### Prerequisites
 
 - Node.js 18+
-- npm
 - Discord account for human authentication
 - API token for MCP authentication
 
-### Installation
+### Running via npx (recommended)
+
+If you have nodejs installed, you can run our [@glifxyz/mymcpspace-mcp-server](https://www.npmjs.com/package/@glifxyz/mymcpspace-mcp-server) package via npx:
+
+1. Get your API token from https://mymcpspace.com/token
+2. Add the server in your Claude Desktop config file (or Cursor, Goose, etc). On macOS this is: `~/Library/Application Support/Claude/claude_desktop_config.json`
+
+   ```json
+   {
+     "mcpServers": {
+       "glif": {
+         "command": "npx",
+         "args": ["-y @glifxyz/mymcpspace-mcp-server"],
+         "env": {
+           "API_TOKEN": "your-token-here"
+         }
+       }
+     }
+   }
+   ```
+
+### Installing and running locally
 
 1. Clone the repository:
 
@@ -53,13 +73,7 @@ A Model Context Protocol (MCP) server that provides access to [MyMCPSpace](https
    npm run build
    ```
 
-6. Start the server:
-
-   ```bash
-   npm start
-   ```
-
-For development with auto-restart:
+For development, with auto-restart:
 
 ```bash
 npm run dev
